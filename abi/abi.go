@@ -9,8 +9,8 @@ import (
 	"encoding/json"
 	"errors"
 
-	ethabi "github.com/ethereum/go-ethereum/accounts/abi"
-	"github.com/vechain/thor/thor"
+	ethabi "github.com/stablyio/go-ethereum/accounts/abi"
+	"github.com/stablyio/thor/thor"
 )
 
 // ABI holds information about methods and events of contract.

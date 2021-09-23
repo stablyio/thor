@@ -10,14 +10,14 @@ import (
 	"net"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common/mclock"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/discover"
-	"github.com/ethereum/go-ethereum/p2p/nat"
+	"github.com/stablyio/go-ethereum/common/mclock"
+	"github.com/stablyio/go-ethereum/p2p"
+	"github.com/stablyio/go-ethereum/p2p/discover"
+	"github.com/stablyio/go-ethereum/p2p/nat"
 	"github.com/inconshreveable/log15"
-	"github.com/vechain/thor/cache"
-	"github.com/vechain/thor/co"
-	"github.com/vechain/thor/p2psrv/discv5"
+	"github.com/stablyio/thor/cache"
+	"github.com/stablyio/thor/co"
+	"github.com/stablyio/thor/p2psrv/discv5"
 )
 
 var log = log15.New("pkg", "p2psrv")

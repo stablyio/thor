@@ -12,10 +12,10 @@ import (
 	"io"
 	"sync/atomic"
 
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/tx"
+	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/rlp"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/tx"
 )
 
 // Header contains almost all information about a block, except block body.

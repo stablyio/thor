@@ -11,12 +11,12 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/vechain/thor/builtin"
-	"github.com/vechain/thor/state"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/tx"
+	"github.com/stablyio/go-ethereum/common/hexutil"
+	"github.com/stablyio/go-ethereum/common/math"
+	"github.com/stablyio/thor/builtin"
+	"github.com/stablyio/thor/state"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/tx"
 )
 
 // CustomGenesis is user customized genesis

@@ -20,9 +20,9 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/go-ethereum/log"
+	"github.com/stablyio/go-ethereum/rlp"
+	"github.com/stablyio/thor/thor"
 )
 
 // Prove constructs a merkle proof for key. The result contains all

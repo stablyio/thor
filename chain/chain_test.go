@@ -8,12 +8,12 @@ package chain_test
 import (
 	"testing"
 
-	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/crypto"
 	"github.com/stretchr/testify/assert"
-	"github.com/vechain/thor/block"
-	"github.com/vechain/thor/chain"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/tx"
+	"github.com/stablyio/thor/block"
+	"github.com/stablyio/thor/chain"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/tx"
 )
 
 func newTx() *tx.Transaction {

@@ -14,13 +14,13 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/stretchr/testify/assert"
-	"github.com/vechain/thor/api/node"
-	"github.com/vechain/thor/chain"
-	"github.com/vechain/thor/comm"
-	"github.com/vechain/thor/genesis"
-	"github.com/vechain/thor/muxdb"
-	"github.com/vechain/thor/state"
-	"github.com/vechain/thor/txpool"
+	"github.com/stablyio/thor/api/node"
+	"github.com/stablyio/thor/chain"
+	"github.com/stablyio/thor/comm"
+	"github.com/stablyio/thor/genesis"
+	"github.com/stablyio/thor/muxdb"
+	"github.com/stablyio/thor/state"
+	"github.com/stablyio/thor/txpool"
 )
 
 var ts *httptest.Server

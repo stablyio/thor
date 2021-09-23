@@ -8,11 +8,11 @@ package chain
 import (
 	"encoding/binary"
 
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/vechain/thor/block"
-	"github.com/vechain/thor/kv"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/tx"
+	"github.com/stablyio/go-ethereum/rlp"
+	"github.com/stablyio/thor/block"
+	"github.com/stablyio/thor/kv"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/tx"
 )
 
 const (

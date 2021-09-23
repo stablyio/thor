@@ -19,7 +19,7 @@ package trie
 import (
 	"fmt"
 
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/thor/thor"
 )
 
 // MissingNodeError is returned by the trie functions (TryGet, TryUpdate, TryDelete)

@@ -10,11 +10,11 @@ import (
 	"math/big"
 	"sync/atomic"
 
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/vechain/thor/builtin"
-	"github.com/vechain/thor/state"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/tx"
+	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/stablyio/thor/builtin"
+	"github.com/stablyio/thor/state"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/tx"
 )
 
 // DevAccount account for development.

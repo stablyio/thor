@@ -6,9 +6,9 @@
 package state
 
 import (
-	"github.com/vechain/thor/kv"
-	"github.com/vechain/thor/muxdb"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/thor/kv"
+	"github.com/stablyio/thor/muxdb"
+	"github.com/stablyio/thor/thor"
 )
 
 // Stage abstracts changes on the main accounts trie.

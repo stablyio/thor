@@ -10,12 +10,12 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/mclock"
+	"github.com/stablyio/go-ethereum/common"
+	"github.com/stablyio/go-ethereum/common/mclock"
 	"github.com/pkg/errors"
-	"github.com/vechain/thor/packer"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/tx"
+	"github.com/stablyio/thor/packer"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/tx"
 )
 
 // gasLimitSoftLimit is the soft limit of the adaptive block gaslimit.

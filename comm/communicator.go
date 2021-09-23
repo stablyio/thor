@@ -13,17 +13,17 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/stablyio/go-ethereum/event"
+	"github.com/stablyio/go-ethereum/p2p"
 	"github.com/inconshreveable/log15"
-	"github.com/vechain/thor/block"
-	"github.com/vechain/thor/chain"
-	"github.com/vechain/thor/co"
-	"github.com/vechain/thor/comm/proto"
-	"github.com/vechain/thor/p2psrv"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/tx"
-	"github.com/vechain/thor/txpool"
+	"github.com/stablyio/thor/block"
+	"github.com/stablyio/thor/chain"
+	"github.com/stablyio/thor/co"
+	"github.com/stablyio/thor/comm/proto"
+	"github.com/stablyio/thor/p2psrv"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/tx"
+	"github.com/stablyio/thor/txpool"
 )
 
 var log = log15.New("pkg", "comm")

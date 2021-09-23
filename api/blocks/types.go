@@ -6,11 +6,11 @@
 package blocks
 
 import (
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/vechain/thor/chain"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/tx"
+	"github.com/stablyio/go-ethereum/common/hexutil"
+	"github.com/stablyio/go-ethereum/common/math"
+	"github.com/stablyio/thor/chain"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/tx"
 )
 
 type JSONBlockSummary struct {

@@ -9,7 +9,7 @@ import (
 	"encoding/binary"
 	"errors"
 
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/thor/thor"
 )
 
 // Scheduler to schedule the time when a proposer to produce a block.

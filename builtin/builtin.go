@@ -7,15 +7,15 @@ package builtin
 
 import (
 	"github.com/pkg/errors"
-	"github.com/vechain/thor/abi"
-	"github.com/vechain/thor/builtin/authority"
-	"github.com/vechain/thor/builtin/energy"
-	"github.com/vechain/thor/builtin/gen"
-	"github.com/vechain/thor/builtin/params"
-	"github.com/vechain/thor/builtin/prototype"
-	"github.com/vechain/thor/state"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/xenv"
+	"github.com/stablyio/thor/abi"
+	"github.com/stablyio/thor/builtin/authority"
+	"github.com/stablyio/thor/builtin/energy"
+	"github.com/stablyio/thor/builtin/gen"
+	"github.com/stablyio/thor/builtin/params"
+	"github.com/stablyio/thor/builtin/prototype"
+	"github.com/stablyio/thor/state"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/xenv"
 )
 
 // Builtin contracts binding.

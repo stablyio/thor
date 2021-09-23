@@ -10,13 +10,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common/mclock"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/discover"
+	"github.com/stablyio/go-ethereum/common/mclock"
+	"github.com/stablyio/go-ethereum/p2p"
+	"github.com/stablyio/go-ethereum/p2p/discover"
 	lru "github.com/hashicorp/golang-lru"
 	"github.com/inconshreveable/log15"
-	"github.com/vechain/thor/p2psrv/rpc"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/thor/p2psrv/rpc"
+	"github.com/stablyio/thor/thor"
 )
 
 const (

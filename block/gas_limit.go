@@ -8,7 +8,7 @@ package block
 import (
 	"math"
 
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/thor/thor"
 )
 
 // GasLimit to support block gas limit validation and adjustment.

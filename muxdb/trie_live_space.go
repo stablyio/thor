@@ -9,7 +9,7 @@ import (
 	"errors"
 	"sync/atomic"
 
-	"github.com/vechain/thor/kv"
+	"github.com/stablyio/thor/kv"
 )
 
 const trieLiveSpaceKey = "trie-live-space"

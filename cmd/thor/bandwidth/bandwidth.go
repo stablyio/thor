@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/vechain/thor/block"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/thor/block"
+	"github.com/stablyio/thor/thor"
 )
 
 // Bandwidth is gas per second.

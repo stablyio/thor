@@ -9,8 +9,8 @@
 package vm
 
 import (
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/common"
+	"github.com/stablyio/go-ethereum/crypto"
 )
 
 // CreateAddress2 creates an ethereum address given the address bytes, initial

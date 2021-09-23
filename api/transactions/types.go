@@ -8,12 +8,12 @@ package transactions
 import (
 	"fmt"
 
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/vechain/thor/block"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/tx"
+	"github.com/stablyio/go-ethereum/common/hexutil"
+	"github.com/stablyio/go-ethereum/common/math"
+	"github.com/stablyio/go-ethereum/rlp"
+	"github.com/stablyio/thor/block"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/tx"
 )
 
 // Clause for json marshal

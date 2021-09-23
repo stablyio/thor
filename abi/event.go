@@ -6,8 +6,8 @@
 package abi
 
 import (
-	ethabi "github.com/ethereum/go-ethereum/accounts/abi"
-	"github.com/vechain/thor/thor"
+	ethabi "github.com/stablyio/go-ethereum/accounts/abi"
+	"github.com/stablyio/thor/thor"
 )
 
 // Event see abi.Event in go-ethereum.

@@ -11,7 +11,7 @@ import (
 	"os/user"
 	"path/filepath"
 
-	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/crypto"
 )
 
 func loadOrGenerateKeyFile(keyFile string) (key *ecdsa.PrivateKey, err error) {

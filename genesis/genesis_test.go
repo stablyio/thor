@@ -9,10 +9,10 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/vechain/thor/genesis"
-	"github.com/vechain/thor/muxdb"
-	"github.com/vechain/thor/state"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/thor/genesis"
+	"github.com/stablyio/thor/muxdb"
+	"github.com/stablyio/thor/state"
+	"github.com/stablyio/thor/thor"
 )
 
 func TestTestnetGenesis(t *testing.T) {

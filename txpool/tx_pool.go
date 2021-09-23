@@ -12,17 +12,17 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/mclock"
-	"github.com/ethereum/go-ethereum/event"
+	"github.com/stablyio/go-ethereum/common"
+	"github.com/stablyio/go-ethereum/common/mclock"
+	"github.com/stablyio/go-ethereum/event"
 	"github.com/inconshreveable/log15"
-	"github.com/vechain/thor/block"
-	"github.com/vechain/thor/builtin"
-	"github.com/vechain/thor/chain"
-	"github.com/vechain/thor/co"
-	"github.com/vechain/thor/state"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/tx"
+	"github.com/stablyio/thor/block"
+	"github.com/stablyio/thor/builtin"
+	"github.com/stablyio/thor/chain"
+	"github.com/stablyio/thor/co"
+	"github.com/stablyio/thor/state"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/tx"
 )
 
 const (

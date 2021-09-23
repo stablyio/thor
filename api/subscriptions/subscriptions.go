@@ -14,10 +14,10 @@ import (
 	"github.com/gorilla/websocket"
 	"github.com/inconshreveable/log15"
 	"github.com/pkg/errors"
-	"github.com/vechain/thor/api/utils"
-	"github.com/vechain/thor/block"
-	"github.com/vechain/thor/chain"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/thor/api/utils"
+	"github.com/stablyio/thor/block"
+	"github.com/stablyio/thor/chain"
+	"github.com/stablyio/thor/thor"
 )
 
 type Subscriptions struct {

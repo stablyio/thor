@@ -9,10 +9,10 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/crypto"
 	"github.com/stretchr/testify/assert"
-	"github.com/vechain/thor/muxdb"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/thor/muxdb"
+	"github.com/stablyio/thor/thor"
 )
 
 func TestStage(t *testing.T) {

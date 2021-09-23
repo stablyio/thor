@@ -6,8 +6,8 @@
 package muxdb
 
 import (
-	"github.com/vechain/thor/kv"
-	"github.com/vechain/thor/trie"
+	"github.com/stablyio/thor/kv"
+	"github.com/stablyio/thor/trie"
 )
 
 // trieNodeKeyBuf buffer for trie node key composition.

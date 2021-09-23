@@ -11,12 +11,12 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	"github.com/vechain/thor/block"
-	"github.com/vechain/thor/chain"
-	"github.com/vechain/thor/runtime"
-	"github.com/vechain/thor/state"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/tx"
+	"github.com/stablyio/thor/block"
+	"github.com/stablyio/thor/chain"
+	"github.com/stablyio/thor/runtime"
+	"github.com/stablyio/thor/state"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/tx"
 )
 
 type txObject struct {

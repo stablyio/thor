@@ -8,8 +8,8 @@ package block
 import (
 	"bytes"
 
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/vechain/thor/tx"
+	"github.com/stablyio/go-ethereum/rlp"
+	"github.com/stablyio/thor/tx"
 )
 
 // Raw allows to partially decode components of a block.

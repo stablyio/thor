@@ -8,8 +8,8 @@ package p2psrv
 import (
 	"sync"
 
-	"github.com/ethereum/go-ethereum/p2p/discover"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/stablyio/go-ethereum/p2p/discover"
+	"github.com/stablyio/go-ethereum/rlp"
 )
 
 // Nodes slice of discovered nodes.

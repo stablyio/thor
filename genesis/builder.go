@@ -9,13 +9,13 @@ import (
 	"math"
 
 	"github.com/pkg/errors"
-	"github.com/vechain/thor/block"
-	"github.com/vechain/thor/muxdb"
-	"github.com/vechain/thor/runtime"
-	"github.com/vechain/thor/state"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/tx"
-	"github.com/vechain/thor/xenv"
+	"github.com/stablyio/thor/block"
+	"github.com/stablyio/thor/muxdb"
+	"github.com/stablyio/thor/runtime"
+	"github.com/stablyio/thor/state"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/tx"
+	"github.com/stablyio/thor/xenv"
 )
 
 // Builder helper to build genesis block.

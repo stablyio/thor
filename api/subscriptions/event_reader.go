@@ -6,8 +6,8 @@
 package subscriptions
 
 import (
-	"github.com/vechain/thor/chain"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/thor/chain"
+	"github.com/stablyio/thor/thor"
 )
 
 type eventReader struct {

@@ -12,16 +12,16 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/crypto"
 	"github.com/stretchr/testify/assert"
-	"github.com/vechain/thor/builtin"
-	"github.com/vechain/thor/chain"
-	"github.com/vechain/thor/muxdb"
-	"github.com/vechain/thor/runtime"
-	"github.com/vechain/thor/state"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/tx"
-	"github.com/vechain/thor/xenv"
+	"github.com/stablyio/thor/builtin"
+	"github.com/stablyio/thor/chain"
+	"github.com/stablyio/thor/muxdb"
+	"github.com/stablyio/thor/runtime"
+	"github.com/stablyio/thor/state"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/tx"
+	"github.com/stablyio/thor/xenv"
 )
 
 func M(a ...interface{}) []interface{} {

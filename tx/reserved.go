@@ -5,7 +5,7 @@ import (
 	"errors"
 	"io"
 
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/stablyio/go-ethereum/rlp"
 )
 
 type reserved struct {

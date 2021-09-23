@@ -3,7 +3,7 @@ package tx
 import (
 	"testing"
 
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/stablyio/go-ethereum/rlp"
 	"github.com/stretchr/testify/assert"
 )
 

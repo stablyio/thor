@@ -8,10 +8,10 @@ package builtin
 import (
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/vechain/thor/abi"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/xenv"
+	"github.com/stablyio/go-ethereum/common"
+	"github.com/stablyio/thor/abi"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/xenv"
 )
 
 func init() {

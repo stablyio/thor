@@ -14,13 +14,13 @@ import (
 	"math/big"
 	"sync/atomic"
 
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/crypto/secp256k1"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/vechain/thor/metric"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/go-ethereum/common/math"
+	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/crypto/secp256k1"
+	"github.com/stablyio/go-ethereum/params"
+	"github.com/stablyio/go-ethereum/rlp"
+	"github.com/stablyio/thor/metric"
+	"github.com/stablyio/thor/thor"
 )
 
 var (

@@ -8,9 +8,9 @@ package state
 import (
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/vechain/thor/muxdb"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/go-ethereum/rlp"
+	"github.com/stablyio/thor/muxdb"
+	"github.com/stablyio/thor/thor"
 )
 
 // Account is the Thor consensus representation of an account.

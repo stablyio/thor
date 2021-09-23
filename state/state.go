@@ -10,11 +10,11 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/vechain/thor/muxdb"
-	"github.com/vechain/thor/stackedmap"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/rlp"
+	"github.com/stablyio/thor/muxdb"
+	"github.com/stablyio/thor/stackedmap"
+	"github.com/stablyio/thor/thor"
 )
 
 const (

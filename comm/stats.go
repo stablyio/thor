@@ -6,7 +6,7 @@
 package comm
 
 import (
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/thor/thor"
 )
 
 // type Traffic struct {

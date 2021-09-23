@@ -10,9 +10,9 @@ import (
 	"io"
 	"sync/atomic"
 
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/vechain/thor/metric"
-	"github.com/vechain/thor/tx"
+	"github.com/stablyio/go-ethereum/rlp"
+	"github.com/stablyio/thor/metric"
+	"github.com/stablyio/thor/tx"
 )
 
 // Block is an immutable block type.

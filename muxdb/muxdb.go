@@ -16,8 +16,8 @@ import (
 	"github.com/syndtr/goleveldb/leveldb/opt"
 	"github.com/syndtr/goleveldb/leveldb/storage"
 	"github.com/syndtr/goleveldb/leveldb/util"
-	"github.com/vechain/thor/kv"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/thor/kv"
+	"github.com/stablyio/thor/thor"
 )
 
 const (

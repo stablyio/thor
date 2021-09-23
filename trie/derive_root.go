@@ -3,11 +3,11 @@ package trie
 import (
 	"bytes"
 
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/go-ethereum/rlp"
+	"github.com/stablyio/thor/thor"
 )
 
-// see "github.com/ethereum/go-ethereum/types/derive_sha.go"
+// see "github.com/stablyio/go-ethereum/types/derive_sha.go"
 
 type DerivableList interface {
 	Len() int

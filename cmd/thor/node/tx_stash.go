@@ -9,11 +9,11 @@ import (
 	"bytes"
 	"container/list"
 
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/stablyio/go-ethereum/rlp"
 	"github.com/syndtr/goleveldb/leveldb"
 	"github.com/syndtr/goleveldb/leveldb/util"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/tx"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/tx"
 )
 
 // to stash non-executable txs.

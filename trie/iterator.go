@@ -21,8 +21,8 @@ import (
 	"container/heap"
 	"errors"
 
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/go-ethereum/rlp"
+	"github.com/stablyio/thor/thor"
 )
 
 // Iterator is a key-value trie iterator that traverses a Trie.

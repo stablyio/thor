@@ -6,8 +6,8 @@
 package chain
 
 import (
-	"github.com/vechain/thor/block"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/thor/block"
+	"github.com/stablyio/thor/thor"
 )
 
 // ExtendedBlock extend block.Block with the obsolete flag.

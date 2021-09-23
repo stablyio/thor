@@ -8,14 +8,14 @@ package consensus
 import (
 	"fmt"
 
-	"github.com/vechain/thor/block"
-	"github.com/vechain/thor/builtin"
-	"github.com/vechain/thor/poa"
-	"github.com/vechain/thor/runtime"
-	"github.com/vechain/thor/state"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/tx"
-	"github.com/vechain/thor/xenv"
+	"github.com/stablyio/thor/block"
+	"github.com/stablyio/thor/builtin"
+	"github.com/stablyio/thor/poa"
+	"github.com/stablyio/thor/runtime"
+	"github.com/stablyio/thor/state"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/tx"
+	"github.com/stablyio/thor/xenv"
 )
 
 func (c *Consensus) validate(

@@ -8,8 +8,8 @@ package thor_test
 import (
 	"testing"
 
-	"github.com/ethereum/go-ethereum/crypto/sha3"
-	"github.com/vechain/thor/blake2b"
+	"github.com/stablyio/go-ethereum/crypto/sha3"
+	"github.com/stablyio/thor/blake2b"
 )
 
 func BenchmarkKeccak(b *testing.B) {

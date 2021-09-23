@@ -9,11 +9,11 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/stablyio/go-ethereum/rlp"
 	"github.com/pkg/errors"
-	"github.com/vechain/thor/block"
-	"github.com/vechain/thor/co"
-	"github.com/vechain/thor/comm/proto"
+	"github.com/stablyio/thor/block"
+	"github.com/stablyio/thor/co"
+	"github.com/stablyio/thor/comm/proto"
 )
 
 func (c *Communicator) sync(peer *Peer, headNum uint32, handler HandleBlockStream) error {

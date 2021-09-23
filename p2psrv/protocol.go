@@ -5,7 +5,7 @@
 
 package p2psrv
 
-import "github.com/ethereum/go-ethereum/p2p"
+import "github.com/stablyio/go-ethereum/p2p"
 
 // Protocol represents a P2P subprotocol implementation.
 type Protocol struct {

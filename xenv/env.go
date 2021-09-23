@@ -8,16 +8,16 @@ package xenv
 import (
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	ethparams "github.com/ethereum/go-ethereum/params"
+	"github.com/stablyio/go-ethereum/common"
+	"github.com/stablyio/go-ethereum/core/types"
+	ethparams "github.com/stablyio/go-ethereum/params"
 	"github.com/pkg/errors"
-	"github.com/vechain/thor/abi"
-	"github.com/vechain/thor/chain"
-	"github.com/vechain/thor/state"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/tx"
-	"github.com/vechain/thor/vm"
+	"github.com/stablyio/thor/abi"
+	"github.com/stablyio/thor/chain"
+	"github.com/stablyio/thor/state"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/tx"
+	"github.com/stablyio/thor/vm"
 )
 
 // BlockContext block context.

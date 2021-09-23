@@ -9,11 +9,11 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/vechain/thor/block"
-	"github.com/vechain/thor/chain"
-	"github.com/vechain/thor/logdb"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/go-ethereum/common/hexutil"
+	"github.com/stablyio/thor/block"
+	"github.com/stablyio/thor/chain"
+	"github.com/stablyio/thor/logdb"
+	"github.com/stablyio/thor/thor"
 )
 
 type LogMeta struct {

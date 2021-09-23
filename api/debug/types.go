@@ -3,10 +3,10 @@ package debug
 import (
 	"fmt"
 
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/thor/thor"
 
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/vechain/thor/vm"
+	"github.com/stablyio/go-ethereum/common/math"
+	"github.com/stablyio/thor/vm"
 )
 
 type TracerOption struct {

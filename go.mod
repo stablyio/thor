@@ -1,4 +1,4 @@
-module github.com/vechain/thor
+module github.com/stablyio/thor
 
 go 1.12
 
@@ -13,7 +13,6 @@ require (
 	github.com/deckarep/golang-set v1.7.1 // indirect
 	github.com/elastic/gosigar v0.10.5
 	github.com/elazarl/go-bindata-assetfs v1.0.0
-	github.com/ethereum/go-ethereum v1.8.14
 	github.com/fatih/color v1.7.0 // indirect
 	github.com/go-stack/stack v1.7.0 // indirect
 	github.com/gorilla/context v0.0.0-20160226214623-1ea25387ff6f // indirect
@@ -33,6 +32,7 @@ require (
 	github.com/pkg/errors v0.8.0
 	github.com/pmezard/go-difflib v1.0.0
 	github.com/rjeczalik/notify v0.9.1 // indirect
+	github.com/stablyio/go-ethereum v1.8.15-0.20210923040736-7f226b740c27
 	github.com/stretchr/testify v1.1.4
 	github.com/syndtr/goleveldb v1.0.1-0.20200815110645-5c35d600f0ca
 	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9

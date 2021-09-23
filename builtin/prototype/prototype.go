@@ -8,9 +8,9 @@ package prototype
 import (
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/vechain/thor/state"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/go-ethereum/rlp"
+	"github.com/stablyio/thor/state"
+	"github.com/stablyio/thor/thor"
 )
 
 type Prototype struct {

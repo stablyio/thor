@@ -9,9 +9,9 @@ import (
 	"context"
 
 	"github.com/syndtr/goleveldb/leveldb/util"
-	"github.com/vechain/thor/kv"
-	"github.com/vechain/thor/thor"
-	"github.com/vechain/thor/trie"
+	"github.com/stablyio/thor/kv"
+	"github.com/stablyio/thor/thor"
+	"github.com/stablyio/thor/trie"
 )
 
 const (

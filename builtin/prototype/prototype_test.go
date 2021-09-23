@@ -10,10 +10,10 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/vechain/thor/builtin/prototype"
-	"github.com/vechain/thor/muxdb"
-	"github.com/vechain/thor/state"
-	"github.com/vechain/thor/thor"
+	"github.com/stablyio/thor/builtin/prototype"
+	"github.com/stablyio/thor/muxdb"
+	"github.com/stablyio/thor/state"
+	"github.com/stablyio/thor/thor"
 )
 
 func M(a ...interface{}) []interface{} {
