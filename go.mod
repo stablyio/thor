@@ -32,7 +32,7 @@ require (
 	github.com/pkg/errors v0.8.0
 	github.com/pmezard/go-difflib v1.0.0
 	github.com/rjeczalik/notify v0.9.1 // indirect
-	github.com/stablyio/go-ethereum v1.8.15-0.20210923040736-6edd4aab761a
+	github.com/stablyio/go-ethereum v1.8.15-0.20211109020303-9232c612f8f5
 	github.com/stretchr/testify v1.1.4
 	github.com/syndtr/goleveldb v1.0.1-0.20200815110645-5c35d600f0ca
 	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
