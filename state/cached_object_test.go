@@ -10,7 +10,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/stablyio/go-ethereum/rlp"
 	"github.com/stablyio/thor/muxdb"
 	"github.com/stablyio/thor/thor"

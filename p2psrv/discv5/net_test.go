@@ -23,11 +23,11 @@ import (
 	"time"
 
 	"github.com/stablyio/go-ethereum/common"
-	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/cryptothor"
 )
 
 func TestNetwork_Lookup(t *testing.T) {
-	key, _ := crypto.GenerateKey()
+	key, _ := cryptothor.GenerateKey()
 	network, err := newNetwork(lookupTestnet, key.PublicKey, "", nil)
 	if err != nil {
 		t.Fatal(err)
@@ -338,12 +338,12 @@ func (*preminedTestnet) localAddr() *net.UDPAddr {
 // various distances to the given target.
 func (tn *preminedTestnet) mine(target NodeID) {
 	tn.target = target
-	tn.targetSha = crypto.Keccak256Hash(tn.target[:])
+	tn.targetSha = cryptothor.Keccak256Hash(tn.target[:])
 	found := 0
 	for found < bucketSize*10 {
 		k := newkey()
 		id := PubkeyID(&k.PublicKey)
-		sha := crypto.Keccak256Hash(id[:])
+		sha := cryptothor.Keccak256Hash(id[:])
 		ld := logdist(tn.targetSha, sha)
 		if len(tn.dists[ld]) < bucketSize {
 			tn.dists[ld] = append(tn.dists[ld], id)

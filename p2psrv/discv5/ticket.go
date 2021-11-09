@@ -27,7 +27,7 @@ import (
 
 	"github.com/stablyio/go-ethereum/common"
 	"github.com/stablyio/go-ethereum/common/mclock"
-	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/go-ethereum/log"
 )
 
@@ -710,7 +710,7 @@ func (b *topicRadiusBucket) adjust(now mclock.AbsTime, inside float64) {
 }
 
 func newTopicRadius(t Topic) *topicRadius {
-	topicHash := crypto.Keccak256Hash([]byte(t))
+	topicHash := cryptothor.Keccak256Hash([]byte(t))
 	topicHashPrefix := binary.BigEndian.Uint64(topicHash[0:8])
 
 	return &topicRadius{

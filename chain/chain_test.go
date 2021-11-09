@@ -8,7 +8,7 @@ package chain_test
 import (
 	"testing"
 
-	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/thor/block"
 	"github.com/stablyio/thor/chain"
 	"github.com/stablyio/thor/thor"
@@ -18,8 +18,8 @@ import (
 
 func newTx() *tx.Transaction {
 	tx := new(tx.Builder).Build()
-	pk, _ := crypto.GenerateKey()
-	sig, _ := crypto.Sign(tx.SigningHash().Bytes(), pk)
+	pk, _ := cryptothor.GenerateKey()
+	sig, _ := cryptothor.Sign(tx.SigningHash().Bytes(), pk)
 	return tx.WithSignature(sig)
 }
 

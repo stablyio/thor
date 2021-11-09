@@ -24,7 +24,7 @@ import (
 	"github.com/stablyio/go-ethereum/common"
 	"github.com/stablyio/go-ethereum/common/math"
 	"github.com/stablyio/go-ethereum/core/types"
-	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/go-ethereum/params"
 )
 
@@ -373,7 +373,7 @@ func opSAR(pc *uint64, evm *EVM, contract *Contract, memory *Memory, stack *Stac
 func opSha3(pc *uint64, evm *EVM, contract *Contract, memory *Memory, stack *Stack) ([]byte, error) {
 	offset, size := stack.pop(), stack.pop()
 	data := memory.Get(offset.Int64(), size.Int64())
-	hash := crypto.Keccak256(data)
+	hash := cryptothor.Keccak256(data)
 
 	if evm.vmConfig.EnablePreimageRecording {
 		evm.StateDB.AddPreimage(common.BytesToHash(hash), data)
