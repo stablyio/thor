@@ -8,7 +8,7 @@ package thor_test
 import (
 	"testing"
 
-	"github.com/stablyio/go-ethereum/crypto/sha3"
+	"github.com/stablyio/go-ethereum/cryptothor/sha3"
 	"github.com/stablyio/thor/blake2b"
 )
 

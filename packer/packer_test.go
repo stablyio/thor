@@ -12,8 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stablyio/go-ethereum/crypto"
-	"github.com/stretchr/testify/assert"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/thor/builtin"
 	"github.com/stablyio/thor/chain"
 	"github.com/stablyio/thor/consensus"
@@ -23,6 +22,7 @@ import (
 	"github.com/stablyio/thor/state"
 	"github.com/stablyio/thor/thor"
 	"github.com/stablyio/thor/tx"
+	"github.com/stretchr/testify/assert"
 )
 
 func M(args ...interface{}) []interface{} {
@@ -55,7 +55,7 @@ func (ti *txIterator) Next() *tx.Transaction {
 		Clause(tx.NewClause(&builtin.Energy.Address).WithData(data)).
 		Gas(300000).GasPriceCoef(0).Nonce(nonce).Expiration(math.MaxUint32).Build()
 	nonce++
-	sig, _ := crypto.Sign(tx.SigningHash().Bytes(), a0.PrivateKey)
+	sig, _ := cryptothor.Sign(tx.SigningHash().Bytes(), a0.PrivateKey)
 	tx = tx.WithSignature(sig)
 
 	return tx
@@ -212,14 +212,14 @@ func TestBlocklist(t *testing.T) {
 		ChainTag(repo.ChainTag()).
 		Clause(tx.NewClause(&a1.Address)).
 		Gas(300000).GasPriceCoef(0).Nonce(0).Expiration(math.MaxUint32).Build()
-	sig0, _ := crypto.Sign(tx0.SigningHash().Bytes(), a0.PrivateKey)
+	sig0, _ := cryptothor.Sign(tx0.SigningHash().Bytes(), a0.PrivateKey)
 	tx0 = tx0.WithSignature(sig0)
 
 	err = flow.Adopt(tx0)
 	assert.True(t, packer.IsBadTx(err))
 	assert.Equal(t, err.Error(), "bad tx: tx origin blocked")
 
-	sig1, _ := crypto.Sign(tx0.SigningHash().Bytes(), a1.PrivateKey)
+	sig1, _ := cryptothor.Sign(tx0.SigningHash().Bytes(), a1.PrivateKey)
 	tx1 := tx0.WithSignature(sig1)
 
 	err = flow.Adopt(tx1)

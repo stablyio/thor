@@ -14,9 +14,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stablyio/go-ethereum/crypto"
 	"github.com/gorilla/mux"
-	"github.com/stretchr/testify/assert"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/thor/block"
 	"github.com/stablyio/thor/chain"
 	"github.com/stablyio/thor/genesis"
@@ -25,6 +24,7 @@ import (
 	"github.com/stablyio/thor/state"
 	"github.com/stablyio/thor/thor"
 	"github.com/stablyio/thor/tx"
+	"github.com/stretchr/testify/assert"
 )
 
 const (
@@ -94,7 +94,7 @@ func initBlockServer(t *testing.T) {
 		BlockRef(tx.NewBlockRef(0)).
 		Build()
 
-	sig, err := crypto.Sign(tx.SigningHash().Bytes(), genesis.DevAccounts()[0].PrivateKey)
+	sig, err := cryptothor.Sign(tx.SigningHash().Bytes(), genesis.DevAccounts()[0].PrivateKey)
 	if err != nil {
 		t.Fatal(err)
 	}

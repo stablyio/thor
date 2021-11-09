@@ -15,8 +15,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stablyio/go-ethereum/crypto"
-	"github.com/stretchr/testify/assert"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/thor/block"
 	"github.com/stablyio/thor/builtin"
 	"github.com/stablyio/thor/chain"
@@ -26,6 +25,7 @@ import (
 	"github.com/stablyio/thor/state"
 	"github.com/stablyio/thor/thor"
 	"github.com/stablyio/thor/tx"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestConsensus(t *testing.T) {
@@ -51,7 +51,7 @@ func txBuilder(tag byte) *tx.Builder {
 
 func txSign(builder *tx.Builder) *tx.Transaction {
 	transaction := builder.Build()
-	sig, _ := crypto.Sign(transaction.SigningHash().Bytes(), genesis.DevAccounts()[0].PrivateKey)
+	sig, _ := cryptothor.Sign(transaction.SigningHash().Bytes(), genesis.DevAccounts()[0].PrivateKey)
 	return transaction.WithSignature(sig)
 }
 
@@ -133,7 +133,7 @@ func newTestConsensus(t *testing.T) *testConsensus {
 }
 
 func (tc *testConsensus) sign(blk *block.Block) *block.Block {
-	sig, err := crypto.Sign(blk.Header().SigningHash().Bytes(), tc.pk)
+	sig, err := cryptothor.Sign(blk.Header().SigningHash().Bytes(), tc.pk)
 	if err != nil {
 		tc.t.Fatal(err)
 	}
@@ -336,7 +336,7 @@ func (tc *testConsensus) TestValidateBlockBody() {
 	triggers["triggerTxOriginBlocked"] = func() {
 		thor.MockBlocklist([]string{genesis.DevAccounts()[9].Address.String()})
 		t := txBuilder(tc.tag).Build()
-		sig, _ := crypto.Sign(t.SigningHash().Bytes(), genesis.DevAccounts()[9].PrivateKey)
+		sig, _ := cryptothor.Sign(t.SigningHash().Bytes(), genesis.DevAccounts()[9].PrivateKey)
 		t = t.WithSignature(sig)
 
 		blk := tc.sign(
@@ -364,28 +364,28 @@ func (tc *testConsensus) TestValidateProposer() {
 	}
 	triggers["triggerErrSignerInvalid"] = func() {
 		blk := tc.originalBuilder().Build()
-		pk, _ := crypto.GenerateKey()
-		sig, _ := crypto.Sign(blk.Header().SigningHash().Bytes(), pk)
+		pk, _ := cryptothor.GenerateKey()
+		sig, _ := cryptothor.Sign(blk.Header().SigningHash().Bytes(), pk)
 		blk = blk.WithSignature(sig)
 		err := tc.consent(blk)
 		expect := consensusError(
 			fmt.Sprintf(
 				"block signer invalid: %v unauthorized block proposer",
-				thor.Address(crypto.PubkeyToAddress(pk.PublicKey)),
+				thor.Address(cryptothor.PubkeyToAddress(pk.PublicKey)),
 			),
 		)
 		tc.assert.Equal(err, expect)
 	}
 	triggers["triggerErrTimestampUnscheduled"] = func() {
 		blk := tc.originalBuilder().Build()
-		sig, _ := crypto.Sign(blk.Header().SigningHash().Bytes(), genesis.DevAccounts()[1].PrivateKey)
+		sig, _ := cryptothor.Sign(blk.Header().SigningHash().Bytes(), genesis.DevAccounts()[1].PrivateKey)
 		blk = blk.WithSignature(sig)
 		err := tc.consent(blk)
 		expect := consensusError(
 			fmt.Sprintf(
 				"block timestamp unscheduled: t %v, s %v",
 				blk.Header().Timestamp(),
-				thor.Address(crypto.PubkeyToAddress(genesis.DevAccounts()[1].PrivateKey.PublicKey)),
+				thor.Address(cryptothor.PubkeyToAddress(genesis.DevAccounts()[1].PrivateKey.PublicKey)),
 			),
 		)
 		tc.assert.Equal(err, expect)

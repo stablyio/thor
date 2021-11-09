@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/go-ethereum/rlp"
 	"github.com/stablyio/thor/muxdb"
 	"github.com/stablyio/thor/stackedmap"
@@ -309,7 +309,7 @@ func (s *State) SetCode(addr thor.Address, code []byte) error {
 	var codeHash []byte
 	if len(code) > 0 {
 		s.sm.Put(codeKey(addr), code)
-		codeHash = crypto.Keccak256(code)
+		codeHash = cryptothor.Keccak256(code)
 		codeCache.Add(string(codeHash), code)
 	} else {
 		s.sm.Put(codeKey(addr), []byte(nil))
@@ -425,7 +425,7 @@ func (s *State) Stage() (*Stage, error) {
 		case codeKey:
 			code := v.([]byte)
 			if len(code) > 0 {
-				codes[thor.Bytes32(crypto.Keccak256Hash(code))] = code
+				codes[thor.Bytes32(cryptothor.Keccak256Hash(code))] = code
 			}
 		case storageKey:
 			if c, jerr = getChanged(key.addr); jerr != nil {

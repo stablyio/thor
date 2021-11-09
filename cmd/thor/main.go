@@ -13,12 +13,12 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/stablyio/go-ethereum/accounts/keystore"
-	"github.com/stablyio/go-ethereum/crypto"
 	"github.com/inconshreveable/log15"
 	isatty "github.com/mattn/go-isatty"
 	"github.com/pborman/uuid"
 	"github.com/pkg/errors"
+	"github.com/stablyio/go-ethereum/accounts/keystore"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/thor/api"
 	"github.com/stablyio/thor/cmd/thor/node"
 	"github.com/stablyio/thor/cmd/thor/pruner"
@@ -332,7 +332,7 @@ func masterKeyAction(ctx *cli.Context) error {
 		if err != nil {
 			return err
 		}
-		fmt.Println("Master:", thor.Address(crypto.PubkeyToAddress(masterKey.PublicKey)))
+		fmt.Println("Master:", thor.Address(cryptothor.PubkeyToAddress(masterKey.PublicKey)))
 		return nil
 	}
 
@@ -358,7 +358,7 @@ func masterKeyAction(ctx *cli.Context) error {
 			return errors.WithMessage(err, "decrypt")
 		}
 
-		if err := crypto.SaveECDSA(keyPath, key.PrivateKey); err != nil {
+		if err := cryptothor.SaveECDSA(keyPath, key.PrivateKey); err != nil {
 			return err
 		}
 		fmt.Println("Master key imported:", thor.Address(key.Address))
@@ -389,7 +389,7 @@ func masterKeyAction(ctx *cli.Context) error {
 
 		keyjson, err := keystore.EncryptKey(&keystore.Key{
 			PrivateKey: masterKey,
-			Address:    crypto.PubkeyToAddress(masterKey.PublicKey),
+			Address:    cryptothor.PubkeyToAddress(masterKey.PublicKey),
 			Id:         uuid.NewRandom()},
 			password, keystore.StandardScryptN, keystore.StandardScryptP)
 		if err != nil {

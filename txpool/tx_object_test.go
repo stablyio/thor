@@ -11,8 +11,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/stablyio/go-ethereum/crypto"
-	"github.com/stretchr/testify/assert"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/thor/block"
 	"github.com/stablyio/thor/chain"
 	"github.com/stablyio/thor/genesis"
@@ -20,6 +19,7 @@ import (
 	"github.com/stablyio/thor/state"
 	"github.com/stablyio/thor/thor"
 	"github.com/stablyio/thor/tx"
+	"github.com/stretchr/testify/assert"
 )
 
 func newChainRepo(db *muxdb.MuxDB) *chain.Repository {
@@ -30,7 +30,7 @@ func newChainRepo(db *muxdb.MuxDB) *chain.Repository {
 }
 
 func signTx(tx *tx.Transaction, acc genesis.DevAccount) *tx.Transaction {
-	sig, _ := crypto.Sign(tx.SigningHash().Bytes(), acc.PrivateKey)
+	sig, _ := cryptothor.Sign(tx.SigningHash().Bytes(), acc.PrivateKey)
 	return tx.WithSignature(sig)
 }
 

@@ -15,8 +15,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stablyio/go-ethereum/crypto"
-	"github.com/stretchr/testify/assert"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/thor/abi"
 	"github.com/stablyio/thor/block"
 	"github.com/stablyio/thor/builtin"
@@ -28,6 +27,7 @@ import (
 	"github.com/stablyio/thor/thor"
 	"github.com/stablyio/thor/tx"
 	"github.com/stablyio/thor/xenv"
+	"github.com/stretchr/testify/assert"
 )
 
 var errReverted = errors.New("evm: execution reverted")
@@ -885,7 +885,7 @@ func TestPrototypeNativeWithBlockNumber(t *testing.T) {
 
 func newBlock(parent *block.Block, score uint64, timestamp uint64, privateKey *ecdsa.PrivateKey) *block.Block {
 	b := new(block.Builder).ParentID(parent.Header().ID()).TotalScore(parent.Header().TotalScore() + score).Timestamp(timestamp).Build()
-	sig, _ := crypto.Sign(b.Header().SigningHash().Bytes(), privateKey)
+	sig, _ := cryptothor.Sign(b.Header().SigningHash().Bytes(), privateKey)
 	return b.WithSignature(sig)
 }
 
@@ -900,7 +900,7 @@ func TestExtensionNative(t *testing.T) {
 	privKeys := make([]*ecdsa.PrivateKey, 2)
 
 	for i := 0; i < 2; i++ {
-		privateKey, _ := crypto.GenerateKey()
+		privateKey, _ := cryptothor.GenerateKey()
 		privKeys[i] = privateKey
 	}
 

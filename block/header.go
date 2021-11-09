@@ -12,7 +12,7 @@ import (
 	"io"
 	"sync/atomic"
 
-	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/go-ethereum/rlp"
 	"github.com/stablyio/thor/thor"
 	"github.com/stablyio/thor/tx"
@@ -181,12 +181,12 @@ func (h *Header) Signer() (signer thor.Address, err error) {
 		}
 	}()
 
-	pub, err := crypto.SigToPub(h.SigningHash().Bytes(), h.body.Signature)
+	pub, err := cryptothor.SigToPub(h.SigningHash().Bytes(), h.body.Signature)
 	if err != nil {
 		return thor.Address{}, err
 	}
 
-	signer = thor.Address(crypto.PubkeyToAddress(*pub))
+	signer = thor.Address(cryptothor.PubkeyToAddress(*pub))
 	return
 }
 

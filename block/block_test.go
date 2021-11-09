@@ -10,12 +10,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/go-ethereum/rlp"
-	"github.com/stretchr/testify/assert"
 	. "github.com/stablyio/thor/block"
 	"github.com/stablyio/thor/thor"
 	"github.com/stablyio/thor/tx"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestBlock(t *testing.T) {
@@ -68,8 +68,8 @@ func TestBlock(t *testing.T) {
 	assert.Equal(t, beneficiary, h.Beneficiary())
 	assert.Equal(t, txsRootHash, h.TxsRoot())
 
-	key, _ := crypto.HexToECDSA(privKey)
-	sig, _ := crypto.Sign(block.Header().SigningHash().Bytes(), key)
+	key, _ := cryptothor.HexToECDSA(privKey)
+	sig, _ := cryptothor.Sign(block.Header().SigningHash().Bytes(), key)
 
 	block = block.WithSignature(sig)
 

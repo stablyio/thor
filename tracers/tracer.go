@@ -27,7 +27,7 @@ import (
 
 	"github.com/stablyio/go-ethereum/common"
 	"github.com/stablyio/go-ethereum/common/hexutil"
-	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/go-ethereum/log"
 	"github.com/stablyio/thor/vm"
 	duktape "gopkg.in/olebedev/go-duktape.v3"
@@ -366,7 +366,7 @@ func New(code string) (*Tracer, error) {
 		nonce := uint64(ctx.GetInt(-1))
 		ctx.Pop2()
 
-		contract := crypto.CreateAddress(from, nonce)
+		contract := cryptothor.CreateAddress(from, nonce)
 		copy(makeSlice(ctx.PushFixedBuffer(20), 20), contract[:])
 		return 1
 	})
@@ -386,7 +386,7 @@ func New(code string) (*Tracer, error) {
 		} else {
 			code = common.FromHex(ctx.GetString(-1))
 		}
-		codeHash := crypto.Keccak256(code)
+		codeHash := cryptothor.Keccak256(code)
 		ctx.Pop3()
 		contract := vm.CreateAddress2(from, salt, codeHash)
 		copy(makeSlice(ctx.PushFixedBuffer(20), 20), contract[:])

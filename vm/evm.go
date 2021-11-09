@@ -21,8 +21,8 @@ import (
 	"sync/atomic"
 	"time"
 
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/stablyio/go-ethereum/common"
-	"github.com/stablyio/go-ethereum/crypto"
 	"github.com/stablyio/go-ethereum/params"
 )
 

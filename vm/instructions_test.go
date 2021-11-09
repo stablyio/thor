@@ -22,7 +22,7 @@ import (
 	"testing"
 
 	"github.com/stablyio/go-ethereum/common"
-	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/go-ethereum/params"
 )
 
@@ -484,8 +484,8 @@ func TestCreate2Addreses(t *testing.T) {
 		origin := common.BytesToAddress(common.FromHex(tt.origin))
 		salt := common.BytesToHash(common.FromHex(tt.salt))
 		code := common.FromHex(tt.code)
-		codeHash := crypto.Keccak256(code)
-		// THOR: Cannot use crypto.CreateAddress2 function.
+		codeHash := cryptothor.Keccak256(code)
+		// THOR: Cannot use cryptothor.CreateAddress2 function.
 		// v1.8.14 -> v1.8.27 depedency issue. See patch.go file.
 		address := CreateAddress2(origin, salt, codeHash)
 		/*

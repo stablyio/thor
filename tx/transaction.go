@@ -15,8 +15,8 @@ import (
 	"sync/atomic"
 
 	"github.com/stablyio/go-ethereum/common/math"
-	"github.com/stablyio/go-ethereum/crypto"
-	"github.com/stablyio/go-ethereum/crypto/secp256k1"
+	"github.com/stablyio/go-ethereum/cryptothor"
+	"github.com/stablyio/go-ethereum/cryptothor/secp256k1"
 	"github.com/stablyio/go-ethereum/params"
 	"github.com/stablyio/go-ethereum/rlp"
 	"github.com/stablyio/thor/metric"
@@ -230,11 +230,11 @@ func (t *Transaction) Origin() (thor.Address, error) {
 		return cached.(thor.Address), nil
 	}
 
-	pub, err := crypto.SigToPub(t.SigningHash().Bytes(), t.body.Signature[:65])
+	pub, err := cryptothor.SigToPub(t.SigningHash().Bytes(), t.body.Signature[:65])
 	if err != nil {
 		return thor.Address{}, err
 	}
-	origin := thor.Address(crypto.PubkeyToAddress(*pub))
+	origin := thor.Address(cryptothor.PubkeyToAddress(*pub))
 	t.cache.origin.Store(origin)
 	return origin, nil
 }
@@ -269,12 +269,12 @@ func (t *Transaction) Delegator() (*thor.Address, error) {
 		return nil, err
 	}
 
-	pub, err := crypto.SigToPub(t.DelegatorSigningHash(origin).Bytes(), t.body.Signature[65:])
+	pub, err := cryptothor.SigToPub(t.DelegatorSigningHash(origin).Bytes(), t.body.Signature[65:])
 	if err != nil {
 		return nil, err
 	}
 
-	delegator := thor.Address(crypto.PubkeyToAddress(*pub))
+	delegator := thor.Address(cryptothor.PubkeyToAddress(*pub))
 
 	t.cache.delegator.Store(delegator)
 	return &delegator, nil

@@ -7,9 +7,8 @@ import (
 	"testing"
 
 	"github.com/stablyio/go-ethereum/common/math"
-	"github.com/stablyio/go-ethereum/crypto"
-	"github.com/stablyio/go-ethereum/crypto/secp256k1"
-	"github.com/stretchr/testify/assert"
+	"github.com/stablyio/go-ethereum/cryptothor"
+	"github.com/stablyio/go-ethereum/cryptothor/secp256k1"
 	"github.com/stablyio/thor/builtin"
 	"github.com/stablyio/thor/chain"
 	"github.com/stablyio/thor/genesis"
@@ -18,6 +17,7 @@ import (
 	"github.com/stablyio/thor/state"
 	"github.com/stablyio/thor/thor"
 	"github.com/stablyio/thor/tx"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestResolvedTx(t *testing.T) {
@@ -183,6 +183,6 @@ func txBuilder(tag byte) *tx.Builder {
 
 func txSign(builder *tx.Builder) *tx.Transaction {
 	transaction := builder.Build()
-	sig, _ := crypto.Sign(transaction.SigningHash().Bytes(), genesis.DevAccounts()[0].PrivateKey)
+	sig, _ := cryptothor.Sign(transaction.SigningHash().Bytes(), genesis.DevAccounts()[0].PrivateKey)
 	return transaction.WithSignature(sig)
 }

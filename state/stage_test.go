@@ -9,10 +9,10 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/stablyio/go-ethereum/crypto"
-	"github.com/stretchr/testify/assert"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/thor/muxdb"
 	"github.com/stablyio/thor/thor"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestStage(t *testing.T) {
@@ -50,7 +50,7 @@ func TestStage(t *testing.T) {
 
 	assert.Equal(t, M(balance, nil), M(state.GetBalance(addr)))
 	assert.Equal(t, M(code, nil), M(state.GetCode(addr)))
-	assert.Equal(t, M(thor.Bytes32(crypto.Keccak256Hash(code)), nil), M(state.GetCodeHash(addr)))
+	assert.Equal(t, M(thor.Bytes32(cryptothor.Keccak256Hash(code)), nil), M(state.GetCodeHash(addr)))
 
 	for k, v := range storage {
 		assert.Equal(t, M(v, nil), M(state.GetStorage(addr, k)))

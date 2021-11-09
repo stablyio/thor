@@ -15,12 +15,11 @@ import (
 	"testing"
 	"time"
 
+	"github.com/gorilla/mux"
 	"github.com/stablyio/go-ethereum/common"
 	"github.com/stablyio/go-ethereum/common/hexutil"
 	"github.com/stablyio/go-ethereum/common/math"
-	"github.com/stablyio/go-ethereum/crypto"
-	"github.com/gorilla/mux"
-	"github.com/stretchr/testify/assert"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	ABI "github.com/stablyio/thor/abi"
 	"github.com/stablyio/thor/api/accounts"
 	"github.com/stablyio/thor/chain"
@@ -30,6 +29,7 @@ import (
 	"github.com/stablyio/thor/state"
 	"github.com/stablyio/thor/thor"
 	"github.com/stablyio/thor/tx"
+	"github.com/stretchr/testify/assert"
 )
 
 var sol = `	pragma solidity ^0.4.18;
@@ -215,7 +215,7 @@ func buildTxWithClauses(t *testing.T, chaiTag byte, clauses ...*tx.Clause) *tx.T
 	}
 
 	transaction := builder.Build()
-	sig, err := crypto.Sign(transaction.SigningHash().Bytes(), genesis.DevAccounts()[0].PrivateKey)
+	sig, err := cryptothor.Sign(transaction.SigningHash().Bytes(), genesis.DevAccounts()[0].PrivateKey)
 	if err != nil {
 		t.Fatal(err)
 	}

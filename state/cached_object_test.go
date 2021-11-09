@@ -12,9 +12,9 @@ import (
 
 	"github.com/stablyio/go-ethereum/crypto"
 	"github.com/stablyio/go-ethereum/rlp"
-	"github.com/stretchr/testify/assert"
 	"github.com/stablyio/thor/muxdb"
 	"github.com/stablyio/thor/thor"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestCachedObject(t *testing.T) {

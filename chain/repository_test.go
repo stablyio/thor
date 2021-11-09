@@ -8,14 +8,14 @@ package chain_test
 import (
 	"testing"
 
-	"github.com/stablyio/go-ethereum/crypto"
-	"github.com/stretchr/testify/assert"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/thor/block"
 	. "github.com/stablyio/thor/chain"
 	"github.com/stablyio/thor/genesis"
 	"github.com/stablyio/thor/muxdb"
 	"github.com/stablyio/thor/state"
 	"github.com/stablyio/thor/tx"
+	"github.com/stretchr/testify/assert"
 )
 
 func M(args ...interface{}) []interface{} {
@@ -44,8 +44,8 @@ func newBlock(parent *block.Block, ts uint64, txs ...*tx.Transaction) *block.Blo
 	}
 	b := builder.Build()
 
-	pk, _ := crypto.GenerateKey()
-	sig, _ := crypto.Sign(b.Header().SigningHash().Bytes(), pk)
+	pk, _ := cryptothor.GenerateKey()
+	sig, _ := cryptothor.Sign(b.Header().SigningHash().Bytes(), pk)
 	return b.WithSignature(sig)
 }
 

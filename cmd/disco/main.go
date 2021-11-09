@@ -12,11 +12,11 @@ import (
 	"net"
 	"os"
 
-	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/pkg/errors"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/go-ethereum/log"
 	"github.com/stablyio/go-ethereum/p2p/nat"
 	"github.com/stablyio/go-ethereum/p2p/netutil"
-	"github.com/pkg/errors"
 	"github.com/stablyio/thor/p2psrv/discv5"
 	cli "gopkg.in/urfave/cli.v1"
 )
@@ -71,7 +71,7 @@ func run(ctx *cli.Context) error {
 	var key *ecdsa.PrivateKey
 
 	if keyHex := ctx.String("keyhex"); keyHex != "" {
-		if key, err = crypto.HexToECDSA(keyHex); err != nil {
+		if key, err = cryptothor.HexToECDSA(keyHex); err != nil {
 			return errors.Wrap(err, "-keyhex")
 		}
 	} else {

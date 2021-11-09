@@ -8,8 +8,8 @@ package packer
 import (
 	"crypto/ecdsa"
 
-	"github.com/stablyio/go-ethereum/crypto"
 	"github.com/pkg/errors"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/thor/block"
 	"github.com/stablyio/thor/runtime"
 	"github.com/stablyio/thor/state"
@@ -139,7 +139,7 @@ func (f *Flow) Adopt(tx *tx.Transaction) error {
 
 // Pack build and sign the new block.
 func (f *Flow) Pack(privateKey *ecdsa.PrivateKey) (*block.Block, *state.Stage, tx.Receipts, error) {
-	if f.packer.nodeMaster != thor.Address(crypto.PubkeyToAddress(privateKey.PublicKey)) {
+	if f.packer.nodeMaster != thor.Address(cryptothor.PubkeyToAddress(privateKey.PublicKey)) {
 		return nil, nil, nil, errors.New("private key mismatch")
 	}
 
@@ -165,7 +165,7 @@ func (f *Flow) Pack(privateKey *ecdsa.PrivateKey) (*block.Block, *state.Stage, t
 	}
 	newBlock := builder.Build()
 
-	sig, err := crypto.Sign(newBlock.Header().SigningHash().Bytes(), privateKey)
+	sig, err := cryptothor.Sign(newBlock.Header().SigningHash().Bytes(), privateKey)
 	if err != nil {
 		return nil, nil, nil, err
 	}

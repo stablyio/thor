@@ -9,11 +9,11 @@ import (
 	"testing"
 
 	"github.com/stablyio/go-ethereum/crypto"
-	"github.com/stretchr/testify/assert"
 	"github.com/stablyio/thor/block"
 	"github.com/stablyio/thor/chain"
 	"github.com/stablyio/thor/thor"
 	"github.com/stablyio/thor/tx"
+	"github.com/stretchr/testify/assert"
 )
 
 func newTx() *tx.Transaction {

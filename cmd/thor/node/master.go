@@ -8,7 +8,7 @@ package node
 import (
 	"crypto/ecdsa"
 
-	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/thor/thor"
 )
 
@@ -18,5 +18,5 @@ type Master struct {
 }
 
 func (m *Master) Address() thor.Address {
-	return thor.Address(crypto.PubkeyToAddress(m.PrivateKey.PublicKey))
+	return thor.Address(cryptothor.PubkeyToAddress(m.PrivateKey.PublicKey))
 }

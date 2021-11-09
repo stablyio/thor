@@ -12,8 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stablyio/go-ethereum/crypto"
-	"github.com/stretchr/testify/assert"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/stablyio/thor/builtin"
 	"github.com/stablyio/thor/chain"
 	"github.com/stablyio/thor/muxdb"
@@ -22,6 +21,7 @@ import (
 	"github.com/stablyio/thor/thor"
 	"github.com/stablyio/thor/tx"
 	"github.com/stablyio/thor/xenv"
+	"github.com/stretchr/testify/assert"
 )
 
 func M(a ...interface{}) []interface{} {

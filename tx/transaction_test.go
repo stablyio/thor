@@ -10,11 +10,11 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/go-ethereum/rlp"
-	"github.com/stretchr/testify/assert"
 	"github.com/stablyio/thor/thor"
 	"github.com/stablyio/thor/tx"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestTx(t *testing.T) {
@@ -44,8 +44,8 @@ func TestTx(t *testing.T) {
 	assert.Nil(t, delegator)
 
 	k, _ := hex.DecodeString("7582be841ca040aa940fff6c05773129e135623e41acce3e0b8ba520dc1ae26a")
-	priv, _ := crypto.ToECDSA(k)
-	sig, _ := crypto.Sign(trx.SigningHash().Bytes(), priv)
+	priv, _ := cryptothor.ToECDSA(k)
+	sig, _ := cryptothor.Sign(trx.SigningHash().Bytes(), priv)
 
 	trx = trx.WithSignature(sig)
 	assert.Equal(t, "0xd989829d88b0ed1b06edf5c50174ecfa64f14a64", func() string { s, _ := trx.Origin(); return s.String() }())
@@ -79,13 +79,13 @@ func TestDelegatedTx(t *testing.T) {
 	assert.Equal(t, "0x96c4cd08584994f337946f950eca5511abe15b152bc879bf47c2227901f9f2af", trx.SigningHash().String())
 	assert.Equal(t, true, trx.Features().IsDelegated())
 
-	p1, _ := crypto.ToECDSA(origin)
-	sig, _ := crypto.Sign(trx.SigningHash().Bytes(), p1)
+	p1, _ := cryptothor.ToECDSA(origin)
+	sig, _ := cryptothor.Sign(trx.SigningHash().Bytes(), p1)
 
-	o := crypto.PubkeyToAddress(p1.PublicKey)
+	o := cryptothor.PubkeyToAddress(p1.PublicKey)
 	hash := trx.DelegatorSigningHash(thor.Address(o))
-	p2, _ := crypto.ToECDSA(delegator)
-	delegatorSig, _ := crypto.Sign(hash.Bytes(), p2)
+	p2, _ := cryptothor.ToECDSA(delegator)
+	delegatorSig, _ := cryptothor.Sign(hash.Bytes(), p2)
 
 	sig = append(sig, delegatorSig...)
 	trx = trx.WithSignature(sig)

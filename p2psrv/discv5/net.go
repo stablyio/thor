@@ -26,8 +26,7 @@ import (
 
 	"github.com/stablyio/go-ethereum/common"
 	"github.com/stablyio/go-ethereum/common/mclock"
-	"github.com/stablyio/go-ethereum/crypto"
-	"github.com/stablyio/go-ethereum/crypto/sha3"
+	"github.com/stablyio/go-ethereum/cryptothor/sha3"
 	"github.com/stablyio/go-ethereum/log"
 	"github.com/stablyio/go-ethereum/p2p/netutil"
 	"github.com/stablyio/go-ethereum/rlp"
@@ -205,7 +204,7 @@ func (net *Network) SetFallbackNodes(nodes []*Node) error {
 		// Recompute cpy.sha because the node might not have been
 		// created by NewNode or ParseNode.
 		cpy := *n
-		cpy.sha = crypto.Keccak256Hash(n.ID[:])
+		cpy.sha = cryptothor.Keccak256Hash(n.ID[:])
 		nursery = append(nursery, &cpy)
 	}
 	net.reqRefresh(nursery)
@@ -215,7 +214,7 @@ func (net *Network) SetFallbackNodes(nodes []*Node) error {
 // Resolve searches for a specific node with the given ID.
 // It returns nil if the node could not be found.
 func (net *Network) Resolve(targetID NodeID) *Node {
-	result := net.lookup(crypto.Keccak256Hash(targetID[:]), true)
+	result := net.lookup(cryptothor.Keccak256Hash(targetID[:]), true)
 	for _, n := range result {
 		if n.ID == targetID {
 			return n
@@ -232,7 +231,7 @@ func (net *Network) Resolve(targetID NodeID) *Node {
 //
 // The local node may be included in the result.
 func (net *Network) Lookup(targetID NodeID) []*Node {
-	return net.lookup(crypto.Keccak256Hash(targetID[:]), false)
+	return net.lookup(cryptothor.Keccak256Hash(targetID[:]), false)
 }
 
 func (net *Network) lookup(target common.Hash, stopOnMatch bool) []*Node {
@@ -801,7 +800,7 @@ func (n *nodeNetGuts) startNextQuery(net *Network) {
 func (q *findnodeQuery) start(net *Network) bool {
 	// Satisfy queries against the local node directly.
 	if q.remote == net.tab.self {
-		closest := net.tab.closest(crypto.Keccak256Hash(q.target[:]), bucketSize)
+		closest := net.tab.closest(cryptothor.Keccak256Hash(q.target[:]), bucketSize)
 		q.reply <- closest.entries
 		return true
 	}
@@ -1152,7 +1151,7 @@ func (net *Network) handleKnownPong(n *Node, pkt *ingressPacket) error {
 func (net *Network) handleQueryEvent(n *Node, ev nodeEvent, pkt *ingressPacket) (*nodeState, error) {
 	switch ev {
 	case findnodePacket:
-		target := crypto.Keccak256Hash(pkt.data.(*findnode).Target[:])
+		target := cryptothor.Keccak256Hash(pkt.data.(*findnode).Target[:])
 		results := net.tab.closest(target, bucketSize).entries
 		net.conn.sendNeighbours(n, results)
 		return n.state, nil

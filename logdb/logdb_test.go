@@ -11,19 +11,19 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/stablyio/go-ethereum/crypto"
-	"github.com/stretchr/testify/assert"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/thor/block"
 	logdb "github.com/stablyio/thor/logdb"
 	"github.com/stablyio/thor/thor"
 	"github.com/stablyio/thor/tx"
+	"github.com/stretchr/testify/assert"
 )
 
 func newTx() *tx.Transaction {
 	tx := new(tx.Builder).Build()
-	pk, _ := crypto.GenerateKey()
+	pk, _ := cryptothor.GenerateKey()
 
-	sig, _ := crypto.Sign(tx.Hash().Bytes(), pk)
+	sig, _ := cryptothor.Sign(tx.Hash().Bytes(), pk)
 	return tx.WithSignature(sig)
 }
 

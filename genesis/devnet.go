@@ -10,7 +10,7 @@ import (
 	"math/big"
 	"sync/atomic"
 
-	"github.com/stablyio/go-ethereum/crypto"
+	"github.com/stablyio/go-ethereum/cryptothor"
 	"github.com/stablyio/thor/builtin"
 	"github.com/stablyio/thor/state"
 	"github.com/stablyio/thor/thor"
@@ -45,11 +45,11 @@ func DevAccounts() []DevAccount {
 		"9d68178cdc934178cca0a0051f40ed46be153cf23cb1805b59cc612c0ad2bbe0",
 	}
 	for _, str := range privKeys {
-		pk, err := crypto.HexToECDSA(str)
+		pk, err := cryptothor.HexToECDSA(str)
 		if err != nil {
 			panic(err)
 		}
-		addr := crypto.PubkeyToAddress(pk.PublicKey)
+		addr := cryptothor.PubkeyToAddress(pk.PublicKey)
 		accs = append(accs, DevAccount{thor.Address(addr), pk})
 	}
 	devAccounts.Store(accs)
